@@ -14,7 +14,27 @@ export class AppComponent{
 
   }
   
+  cityName: string = "Orlando";
   weatherData?: WeatherData;
+
+  ngOnInit() : void {
+    this.getWeatherData(this.cityName);
+    this.cityName = '';
+  }
+
+  onSubmit() {
+    this.getWeatherData(this.cityName);
+    this.cityName = '';
+  }
+
+  private getWeatherData(cityName : string) {
+    //     this.weatherService.getWeatherData(cityName).subscribe({
+    //   next: (response) => {
+    //     this.weatherData = response;
+    //     console.log(response);
+    //   }
+    // });
+  }
 }
 
 //commented out the code that does the API call cuz I ran out of API calls for the MONTH (cuz I didn't know I had a fixed amount)

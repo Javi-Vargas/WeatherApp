@@ -15,17 +15,17 @@ export class WeatherService {
   //using the environment folder/files we set the Host Name&Value and the Key Name&Value
 
   //uncomment when find a new weather API to use :)
-  // getWeatherData(cityName: string) : Observable<WeatherData> {
-  //   // https://open-weather13.p.rapidapi.com/city/Winter%20Park/EN
-  //   //Trying out a diff method of loading the Url so that I can actually have it be dynamic.
-  //   const apiUrl = `${environment.weatherApiBaseUrl}/city/${cityName}/EN`;  //this line is needed to get the apiUrl formatting correct
+  getWeatherData(cityName: string) : void {//Observable<WeatherData> {
+    // https://open-weather13.p.rapidapi.com/city/Winter%20Park/EN
+    //Trying out a diff method of loading the Url so that I can actually have it be dynamic.
+    //const apiUrl = `${environment.weatherApiBaseUrl}/city/${cityName}/EN`;  //this line is needed to get the apiUrl formatting correct
 
-  //     return this.http.get<WeatherData>(apiUrl, {
-  //       headers: new HttpHeaders()
-  //       .set(environment.XRapidAPIHostHeaderName, environment.XRapidAPIHostHeaderValue)
-  //       .set(environment.XRapidAPIKeyHearderName, environment.XRapidAPIKeyHeaderValue),
-  //       params: new HttpParams()
-  //       .set('city', cityName)
-  //     });
-  // }
+      // return this.http.get<WeatherData>(apiUrl, {
+      //   headers: new HttpHeaders()
+      //   .set(environment.XRapidAPIHostHeaderName, environment.XRapidAPIHostHeaderValue)
+      //   .set(environment.XRapidAPIKeyHearderName, environment.XRapidAPIKeyHeaderValue),
+      //   params: new HttpParams()
+      //   .set('city', cityName)
+      // });
+  }
 }

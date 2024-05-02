@@ -137,10 +137,31 @@ body {
     color: var(--white);
 }
 
-.search-container {
+.search {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.search input {
+    background-color: var(--shadow-light);
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    padding: 1em;
+    color: var(--grey-1);
+    font-size: 0.8em;
+    text-align: center;
+    color: white;
+}
+
+.search input::placeholder {
+    color: white; /* Set placeholder text color */
+}
+
+/* .search-container {
     position: relative;
     bottom: 200px;
-    left: -500px; /* Adjust left position as needed */
+    left: -500px; 
     display: flex;
     align-items: center;
   }
@@ -159,4 +180,4 @@ body {
     border-radius: 4px;
     margin-left: 8px;
     cursor: pointer;
-  }
+  } */
