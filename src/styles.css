@@ -44,6 +44,18 @@ body {
     border-top-right-radius: 20px;
 }
 
+.lower-data {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
 .upper-data img {
     position: absolute;
     top: 0;
@@ -57,11 +69,12 @@ body {
     z-index: 1;
     width: 100%;
     height: 100%;
-    background-color: var(--shadow-dark);
+    background-color: var(--shadow-dark);  /*background-color: var(--shadow-light); */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: -20px;
 }
 
 .location {
@@ -76,3 +89,74 @@ body {
     text-align: center;
     font-weight: 900;
 }
+
+.more-info-label {
+    color: var(--white);
+}
+
+.more-info-container {
+    flex: 1;
+    background-color: var(--shadow-light);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-top: 1em;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.info-block {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.info-block-label {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-block-label img {
+    width: 2.5em;
+}
+
+.info-block-label span {
+    color: var(--white);
+    padding-top: 5px;
+    font-size: .7em;
+}
+.info-block-value {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--white);
+}
+
+.search-container {
+    position: relative;
+    bottom: 200px;
+    left: -500px; /* Adjust left position as needed */
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-container input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .search-container button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-left: 8px;
+    cursor: pointer;
+  }

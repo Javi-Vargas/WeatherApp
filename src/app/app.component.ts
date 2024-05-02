@@ -1,10 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { WeatherService } from './services/weather.service';
+import { WeatherData } from './models/weather.model';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'WeatherApp';
+
+export class AppComponent{
+  
+  constructor(private weatherService: WeatherService) {
+
+  }
+  
+  weatherData?: WeatherData;
 }
+
+//commented out the code that does the API call cuz I ran out of API calls for the MONTH (cuz I didn't know I had a fixed amount)
+// export class AppComponent implements OnInit{
+  
+//   constructor(private weatherService: WeatherService) {
+
+//   }
+  
+//   weatherData?: WeatherData;
+
+//   ngOnInit(): void {
+//     this.weatherService.getWeatherData("Winter Park").subscribe({
+//       next: (response) => {
+//         this.weatherData = response;
+//         console.log(response);
+//       }
+//     });
+//   }
+// }
