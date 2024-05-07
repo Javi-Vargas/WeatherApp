@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from './services/weather.service';
-import { WeatherData } from './models/weather.model';
+import { Values, WeatherData, Location } from './models/weather.model';
 
 @Component({
   selector: 'app-root',
@@ -8,50 +8,63 @@ import { WeatherData } from './models/weather.model';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent{
+export class AppComponent implements OnInit{
   
   constructor(private weatherService: WeatherService) {
 
   }
-  
-  cityName: string = "Orlando";
+  cityName: string = 'Orlando';
   weatherData?: WeatherData;
+  values?: Values;
+  location?: Location;
 
-  ngOnInit() : void {
+  ngOnInit(): void {
     this.getWeatherData(this.cityName);
     this.cityName = '';
   }
-
+  
   onSubmit() {
     this.getWeatherData(this.cityName);
     this.cityName = '';
   }
-
-  private getWeatherData(cityName : string) {
-    //     this.weatherService.getWeatherData(cityName).subscribe({
-    //   next: (response) => {
-    //     this.weatherData = response;
-    //     console.log(response);
-    //   }
-    // });
+  
+  private getWeatherData(cityName: string) {
+    this.weatherService.getWeatherData(cityName).subscribe({
+      next: (response) => {
+        this.weatherData = response;
+        console.log(response);
+      }
+    });
   }
 }
 
-//commented out the code that does the API call cuz I ran out of API calls for the MONTH (cuz I didn't know I had a fixed amount)
-// export class AppComponent implements OnInit{
+// export class AppComponent{
   
 //   constructor(private weatherService: WeatherService) {
 
 //   }
   
+//   cityName: string = "Orlando";
 //   weatherData?: WeatherData;
+//   values?: Values;
 
-//   ngOnInit(): void {
-//     this.weatherService.getWeatherData("Winter Park").subscribe({
-//       next: (response) => {
-//         this.weatherData = response;
-//         console.log(response);
-//       }
-//     });
+//   ngOnInit() : void {
+//     this.getWeatherData(this.cityName);
+//     this.cityName = '';
+//   }
+
+//   onSubmit() {
+//     this.getWeatherData(this.cityName);
+//     this.cityName = '';
+//   }
+
+//   private getWeatherData(cityName : string) {
+//     //     this.weatherService.getWeatherData(cityName).subscribe({
+//     //   next: (response) => {
+//     //     this.weatherData = response;
+//     //     console.log(response);
+//     //   }
+//     // });
 //   }
 // }
+

@@ -158,7 +158,7 @@ body {
     color: white; /* Set placeholder text color */
 }
 
-/* .search-container {
+.search-container {
     position: relative;
     bottom: 200px;
     left: -500px; 
@@ -180,4 +180,4 @@ body {
     border-radius: 4px;
     margin-left: 8px;
     cursor: pointer;
-  } */
+  }
